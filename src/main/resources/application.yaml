@@ -1,0 +1,17 @@
+server:
+  port: 8092
+  servlet:
+    context-path: /property-view
+
+spring:
+  liquibase:
+    change-log: classpath:db/changelog/changelog-master.yaml
+
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:h2:mem:hoteldb;DB_CLOSE_DELAY=-1}
+    username: ${SPRING_DATASOURCE_USERNAME:sa}
+    password: ${SPRING_DATASOURCE_PASSWORD:}
+
+  jpa:
+    generate-ddl: false
+    show-sql: true
